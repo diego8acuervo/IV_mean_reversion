@@ -32,3 +32,12 @@ IV_mean_reversion/
 - Scripts import from `src/` using the package installed in editable mode (`pip install -e .`)
 - Notebooks live in `notebooks/` and import from `src/` the same way
 - Environment variable `IB_HOST` (default `127.0.0.1`) and `IB_PORT` (default `7497`) control IB Gateway connection
+
+## Skills
+See also:
+- [iv-mean-reversion](https://github.com/diego8acuervo/iv-mean-reversion.md)
+- [tws_api_documentation](https://www.interactivebrokers.com/campus/ibkr-api-page/twsapi-doc/#api-introduction)
+- [ib_insync](https://ib-insync.readthedocs.io/en/latest/)
+- [pandas](https://pandas.pydata.org/docs/)
+- [numpy](https://numpy.org/doc/stable/)
+- [pyarrow](https://arrow.apache.org/docs/python/)

@@ -1,7 +1,8 @@
 """IB connector – thin wrapper around ib_insync for IV data collection."""
 
 import os
-from ib_insync import IB, Stock, Option, util
+
+from ib_insync import IB, Stock
 
 IB_HOST = os.getenv("IB_HOST", "127.0.0.1")
 IB_PORT = int(os.getenv("IB_PORT", 7497))

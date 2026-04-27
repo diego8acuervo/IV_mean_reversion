@@ -10,3 +10,9 @@
     "**/*.pyc": true
   }
 }
+{
+  "github.copilot.chat.locatePythonRefs": true,
+  "github.copilot.advanced": {
+    "debug.overrideChatModel": "claude-haiku-4.5"
+  }
+}
