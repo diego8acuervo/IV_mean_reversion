@@ -1,0 +1,11 @@
+ib_insync>=0.9.86
+pandas>=2.2
+numpy>=1.26
+scipy>=1.13
+yfinance>=0.2.38
+matplotlib>=3.8
+seaborn>=0.13
+pyarrow>=16.0
+jupyter>=1.0
+ipykernel>=6.29
+python-dotenv>=1.0
