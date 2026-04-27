@@ -14,7 +14,7 @@ DATA_DIR        = Path("data/iv_raw")
 CAPITAL         = 100_000       # starting capital
 POSITION_SIZE   = 0.05          # 5% of equity per trade (adjust for exposure target)
 COMMISSION_PCT  = 0.001         # 0.1% per trade (round-trip: 0.2%)
-START_DATE      = "2020-01-01"
+START_DATE      = "2024-09-01"
 # ──────────────────────────────────────────────────────────────────────────────
 
 
