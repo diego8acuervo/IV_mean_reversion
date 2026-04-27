@@ -5,7 +5,7 @@ import os
 from ib_insync import IB, Stock
 
 IB_HOST = os.getenv("IB_HOST", "127.0.0.1")
-IB_PORT = int(os.getenv("IB_PORT", 7497))
+IB_PORT = int(os.getenv("IB_PORT", 7496))
 IB_CLIENT_ID = int(os.getenv("IB_CLIENT_ID", 1))
 
 

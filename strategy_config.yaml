@@ -1,0 +1,47 @@
+# IV Mean Reversion — Strategy Configuration
+# Edit this file to tune all strategy parameters in one place.
+
+# ── Universe ──────────────────────────────────────────────────────────────────
+universe_file: "references/russell1000.txt"
+data_dir: "data/iv_raw"
+
+# ── IBKR Connection ───────────────────────────────────────────────────────────
+ibkr:
+  host: "127.0.0.1"
+  port: 7496          # 7497=TWS paper | 7496=TWS live | 4002=GW paper | 4001=GW live
+  client_id: 1
+  duration: "5 Y"
+  bar_size: "1 day"
+  sleep_sec: 0.6      # throttle between requests (IBKR pace: ~50 req/10s)
+
+# ── Entry Filters ─────────────────────────────────────────────────────────────
+filters:
+  min_avg_volume: 200000      # 20-day average daily volume
+  min_price: 20.0             # USD
+  ma_period: 200              # uptrend: close > MA(N)
+  min_daily_iv: 0.0055        # 0.55% daily IV floor
+
+# ── Signal Conditions ─────────────────────────────────────────────────────────
+signal:
+  below_prev_low: true        # close < prev day's low
+  exceeds_div: true           # |daily_return| > daily_IV
+
+# ── Trade Execution ───────────────────────────────────────────────────────────
+execution:
+  entry_discount_pct: 0.005   # limit order = close * (1 - 0.005)
+  profit_target_pct: 0.04     # exit = entry * (1 + 0.04) — TUNE THIS
+  max_hold_days: 7            # time-based stop — TUNE THIS
+  order_type: "LMT"
+  tif: "DAY"                  # day order
+
+# ── Position Sizing ───────────────────────────────────────────────────────────
+sizing:
+  capital: 100000
+  position_size_pct: 0.05     # 5% of equity per trade
+  max_concurrent_positions: 5 # caps total exposure at ~25%
+  commission_pct: 0.001       # one-way (0.1%)
+
+# ── Backtest ──────────────────────────────────────────────────────────────────
+backtest:
+  start_date: "2020-01-01"
+  benchmark: "SPY"

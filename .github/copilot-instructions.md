@@ -33,6 +33,15 @@ IV_mean_reversion/
 - Notebooks live in `notebooks/` and import from `src/` the same way
 - Environment variable `IB_HOST` (default `127.0.0.1`) and `IB_PORT` (default `7497`) control IB Gateway connection
 
+## Security & Repository Rules (STRICT)
+- **NEVER** change the GitHub repository visibility to **public**. The repo must always remain **private**.
+  - Do not run `gh repo create ... --public`, `gh repo edit ... --visibility public`, or any equivalent API call.
+  - If a feature requires a public repo (e.g. free-tier branch protection), propose alternatives instead of changing visibility.
+- **NEVER** commit, push, stage, or upload `.env`, `.env.local`, or any file containing secrets, API keys, tokens, or IB credentials.
+  - Always confirm `.env*` patterns are present in `.gitignore` before any `git add` / `git commit`.
+  - Never `git add .env` or `git add -f` on any secret file, even if requested implicitly.
+- Treat all credentials, tokens, and account IDs as sensitive — never echo them in terminal output or chat.
+
 ## Skills
 See also:
 - [iv-mean-reversion](https://github.com/diego8acuervo/iv-mean-reversion.md)
